@@ -1,0 +1,3327 @@
+{
+	"id": "0290773f-86e8-4d4d-ac1b-342a02bfe90d",
+	"name": "SmokeTest - Softpos Merchant Gateway",
+	"timestamp": "2023-02-13T08:57:09.146Z",
+	"collection_id": "21342159-57fb08b6-4932-42d9-8f75-9fde780bea83",
+	"folder_id": 0,
+	"environment_id": "21342159-a9d4584b-950a-4347-ac1a-48765388f975",
+	"totalPass": 132,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-02-13T08:56:36.037Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a5083953-d192-4e0b-8521-17af093e67a8",
+			"name": "Login",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/gateway/authenticate",
+			"time": 711,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Login with valid credentials": true,
+				"Response contains access_token": true,
+				"Response contains refresh_token": true
+			},
+			"testPassFailCounts": {
+				"Login with valid credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains access_token": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains refresh_token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				711
+			],
+			"allTests": [
+				{
+					"Login with valid credentials": true,
+					"Response contains access_token": true,
+					"Response contains refresh_token": true
+				}
+			]
+		},
+		{
+			"id": "0948fcfe-8098-4a0a-97a7-8b492972de1d",
+			"name": "Invalid Login",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/gateway/authenticate",
+			"time": 535,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Login with invalid credentials": true
+			},
+			"testPassFailCounts": {
+				"Login with invalid credentials": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				535
+			],
+			"allTests": [
+				{
+					"Login with invalid credentials": true
+				}
+			]
+		},
+		{
+			"id": "fca7b939-5096-4357-844f-cd0ec4e632ce",
+			"name": "forgotPassword",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/gateway/forgot-password",
+			"time": 488,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches token": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				488
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches token": true
+				}
+			]
+		},
+		{
+			"id": "46a4e447-498a-42aa-bcc2-51404b98463f",
+			"name": "resetPassword",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/gateway/reset-password",
+			"time": 253,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				253
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "853709a6-b992-4dff-b9c6-69c5116f78e9",
+			"name": "Set Password",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/gateway/password-set",
+			"time": 496,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				496
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "106908ce-7813-4d36-a874-a71ae62b41e1",
+			"name": "get-merchant-audit-logs",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/audit/get-merchant-audit-logs?direction=ASC&endDate=07-02-2024&page=0&size=5&sortField=id&startDate=01-02-2023",
+			"time": 566,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches userName": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches userName": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				566
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches userName": true
+				}
+			]
+		},
+		{
+			"id": "b4f4a7a7-d3b9-4bc1-83ce-7ed6f3a1e575",
+			"name": "get-merchant-audit-logs 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/audit/get-merchant-audit-logs?direction=ASC&endDate=09-10-2022&page=0&size=5&sortField=id&startDate=01-01-2022",
+			"time": 242,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				242
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "e6150990-6f5a-409b-80c8-d9828cd09218",
+			"name": "get-personal-merchant-audit-logs",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/audit/get-personal-merchant-audit-logs?direction=ASC&endDate=09-10-2024&page=0&size=5&sortField=id&startDate=01-01-2022&status=ACTIVE",
+			"time": 728,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				728
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "38005e79-000b-4cde-a7f7-816d8faa7bb3",
+			"name": "get-personal-merchant-audit-logs 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/audit/get-personal-merchant-audit-logs?direction=ASC&endDate=09-10-2022&page=0&size=5&sortField=id&startDate=01-01-2022&status=ACTIVE",
+			"time": 236,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "f15fbde4-0713-4768-a914-aff2cd57b9f6",
+			"name": "get-total-merchant-users",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-total-merchant-users?organization-id=1",
+			"time": 289,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches totalNumberOfUsers": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches totalNumberOfUsers": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				289
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches totalNumberOfUsers": true
+				}
+			]
+		},
+		{
+			"id": "6efd6b32-55ed-4217-84e6-855ccf8249bd",
+			"name": "get-total-merchant-users 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-total-merchant-users?organization-id=1",
+			"time": 236,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "dce1866a-eba9-40e6-b42c-0e72224f6825",
+			"name": "get-total-transaction-amount",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-total-transaction-amount?currency-code=566&merchant-id=10251&dayRange=100&organization-id=1",
+			"time": 280,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches totalSuccessAmount": true,
+				"Body matches totalFailAmount": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches totalSuccessAmount": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches totalFailAmount": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				280
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches totalSuccessAmount": true,
+					"Body matches totalFailAmount": true
+				}
+			]
+		},
+		{
+			"id": "68c1663f-e0d5-499a-b12f-10ba766ac980",
+			"name": "get-total-transaction-amount 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-total-transaction-amount?currency-code=566&merchant-id=10251&dayRange=100&organization-id=1",
+			"time": 243,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				243
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "5f27c3b9-5d1a-4933-a6e6-4ee67c735230",
+			"name": "get-performing-outlets",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-performing-outlets?merchant-id=10251&day-range=360",
+			"time": 588,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches topPerformingOutletDtoList": true,
+				"Body matches leastPerformingOutletDtoList": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Body matches topPerformingOutletDtoList": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches leastPerformingOutletDtoList": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				588
+			],
+			"allTests": [
+				{
+					"Body matches topPerformingOutletDtoList": true,
+					"Body matches leastPerformingOutletDtoList": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "654e330c-106f-4295-9bd3-f5fc355f5a46",
+			"name": "get-performing-outlets 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-performing-outlets?merchant-id=10251&day-range=360",
+			"time": 243,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				243
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "7468899e-b0f4-4758-96d3-57bcbeb750c1",
+			"name": "get-transactions-breakdown",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-transactions-breakdown?currency-code=566&merchant-id=10251&day-range=360",
+			"time": 264,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches transactionDate": true,
+				"Body matches successTransactionAmount": true,
+				"Body matches failedTransactionAmount": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches transactionDate": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches successTransactionAmount": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches failedTransactionAmount": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches transactionDate": true,
+					"Body matches successTransactionAmount": true,
+					"Body matches failedTransactionAmount": true
+				}
+			]
+		},
+		{
+			"id": "8046c387-81c2-4b7d-a2f0-3e09fe7baa24",
+			"name": "get-transactions-breakdown 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-transactions-breakdown?currency-code=566&merchant-id=10251&day-range=360",
+			"time": 246,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				246
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "94d5a98b-762b-4c75-a4f8-a336661d01c3",
+			"name": "get-transactions-by-status",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-transactions-by-status?currency-code=566&merchant-id=10251&dayRange=360",
+			"time": 269,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				269
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "523aa8d7-0f49-4d87-bbdf-bac9c3d93b1e",
+			"name": "get-transactions-by-status 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-transactions-by-status?currency-code=566&merchant-id=10251&dayRange=360",
+			"time": 239,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				239
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "43a69d0e-78a1-4b44-b1c2-8b41caece77a",
+			"name": "get-total-merchant-volume",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-total-merchant-volume?currency-code=566&merchant-id=10251&dayRange=360",
+			"time": 318,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches totalTransactionVolume": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches totalTransactionVolume": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				318
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches totalTransactionVolume": true
+				}
+			]
+		},
+		{
+			"id": "b6ef8fbf-6515-481d-8813-6334c76d6c4d",
+			"name": "get-total-merchant-volume 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/get-total-merchant-volume?currency-code=566&merchant-id=10251&dayRange=360",
+			"time": 234,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "6021342d-554c-4fe0-b075-9a83f44a2e38",
+			"name": "live-transaction",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/live-transaction/10251",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "e3354921-6362-4c38-9406-b13cd47e7148",
+			"name": "live-transaction 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/dashboard/live-transaction/10251",
+			"time": 234,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "cf1f4447-1b38-4057-8d74-8a086db0454e",
+			"name": "get-approval-details",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/get-approval-details/4",
+			"time": 280,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				280
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "94b78bfa-ca30-4168-bcaa-e865457ffc16",
+			"name": "get-approval-details 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/get-approval-details/4",
+			"time": 239,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				239
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "225cf8b9-3ebf-4353-8bd5-fff7739121df",
+			"name": "list-approvals",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/list-approvals?direction=ASC&groupName=Merchants&page=0&size=5",
+			"time": 263,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				263
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "83273aa1-6025-41a9-bb2b-ccc2e8bae395",
+			"name": "list-approvals 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/list-approvals?direction=ASC&groupName=Merchants&page=0&size=5",
+			"time": 233,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "166ca41d-4e32-41ec-b889-562926defb3a",
+			"name": "list-endpoint-groups",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/list-endpoint-groups",
+			"time": 248,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				248
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "cc426ed2-7f13-4717-b910-370c10e469de",
+			"name": "list-endpoint-groups 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/list-endpoint-groups",
+			"time": 234,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "18b46061-a58d-4cb7-8d4b-e07b66fd8c12",
+			"name": "update-approval-status",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/update-approval-status",
+			"time": 613,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				613
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "c1e0ed38-d8b0-4ef1-ba64-43e3957c76a7",
+			"name": "update-approval-status 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/maker-checker/update-approval-status",
+			"time": 238,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				238
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "1635ebff-12ab-406d-99eb-1f340c83ce4c",
+			"name": "disable-user",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/disable-user",
+			"time": 701,
+			"responseCode": {
+				"code": 202,
+				"name": "Accepted"
+			},
+			"tests": {
+				"Status code is 202": true
+			},
+			"testPassFailCounts": {
+				"Status code is 202": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				701
+			],
+			"allTests": [
+				{
+					"Status code is 202": true
+				}
+			]
+		},
+		{
+			"id": "e3fd78a4-9543-43bb-8b9e-4d015c563e4a",
+			"name": "disable-user 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/disable-user",
+			"time": 235,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "588486ed-d91a-47e0-b20a-ef4af15798f2",
+			"name": "enable-user",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/enable-user",
+			"time": 1102,
+			"responseCode": {
+				"code": 202,
+				"name": "Accepted"
+			},
+			"tests": {
+				"Status code is 202": true
+			},
+			"testPassFailCounts": {
+				"Status code is 202": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1102
+			],
+			"allTests": [
+				{
+					"Status code is 202": true
+				}
+			]
+		},
+		{
+			"id": "9d28bef3-7a12-4fa4-8c43-4c8aa0f1ddd3",
+			"name": "enable-user 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/enable-user",
+			"time": 234,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "c90dea38-eb7c-4eb4-a197-e3ae9761a0a4",
+			"name": "list-admin-users",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-admin-users/0/5/ASC?merchantId=10251&sortField=&admin-name=",
+			"time": 260,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				260
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "d0c3bd63-8b1c-4e31-80fa-15696ba3f75a",
+			"name": "list-admin-users 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-admin-users/0/5/ASC?merchantId=10251&sortField=&admin-name=",
+			"time": 241,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				241
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "0a9adcb7-452b-43e4-b617-20046526d4f2",
+			"name": "list-devices",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-devices/0/5/ASC?merchant-id=10251&sortField=id&start-date=01-01-2022&end-date=21-10-2024",
+			"time": 280,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				280
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "3b5ccb13-8c0e-4db2-b36b-ebde9d78f994",
+			"name": "list-devices 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-devices/0/5/ASC?merchant-id=10018&sortField=id&start-date=01-01-2022&end-date=21-10-2022",
+			"time": 234,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				234
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "84bb70ae-6615-41d6-9432-0d30529bc025",
+			"name": "list-staff-users",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-staff-users/0/5/ASC?merchantId=10251&sortField=&staff-name=",
+			"time": 271,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				271
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "31c9c560-a629-400c-bacd-bb9872896f5d",
+			"name": "list-staff-users 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-staff-users/0/5/ASC?merchantId=10018&sortField=&staff-name=",
+			"time": 235,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "727cf088-bd33-4c1d-a0db-3203f8f5c5b6",
+			"name": "list-transactions",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-transactions/0/5/ASC?sortField=id&merchant-code=10251&start-date=01-09-2022&end-date=10-09-2024",
+			"time": 293,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				293
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "abe22c6f-5f07-463b-a3d5-56cffd7f8012",
+			"name": "list-transactions 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/list-transactions/0/5/ASC?start-date=01-09-2022&end-date=10-09-2022",
+			"time": 232,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				232
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "c35cc74a-268f-4e12-803a-1ac149a9b3bd",
+			"name": "merchant-user-detail",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/merchant-user-detail?organization-id=1&merchant-user-id=39350&dayRange=360",
+			"time": 271,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				271
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "7f6b6cb1-371d-4b6c-9866-998e3ddfd978",
+			"name": "merchant-user-detail 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/merchant-user-detail?organization-id=1&merchant-user-id=30022&dayRange=100",
+			"time": 236,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "9ae10f27-6376-48cc-9078-6bcc620f1931",
+			"name": "transaction-detail",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/transaction-detail/28407?merchant-id=10251",
+			"time": 342,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches transactionId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches transactionId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				342
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches transactionId": true
+				}
+			]
+		},
+		{
+			"id": "47570151-1d30-4f5f-9fe3-4c6e78b5b0bc",
+			"name": "transaction-detail 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/transaction-detail/28407?merchant-id=10251",
+			"time": 242,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				242
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "0aa27841-3003-4c9d-999c-03e108bf3204",
+			"name": "merchant update",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/update",
+			"time": 276,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				276
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ae9097f5-2449-43e1-ae81-1dbaf7b61a82",
+			"name": "merchant update 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/update",
+			"time": 254,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				254
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "7b643048-acab-4e78-90b7-fd4cdb698e80",
+			"name": "list of outlets belongs to a merchant",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/all?merchantId=10251&page=0&size=5&sortField=id&direction=ASC",
+			"time": 254,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				254
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "81f007aa-7172-449b-a74b-9e313dbde45b",
+			"name": "list of outlets belongs to a merchant 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/all?merchantId=10251&page=0&size=5&sortField=id&direction=ASC",
+			"time": 245,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				245
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "57bbb15c-6498-413c-9880-50f270f4b179",
+			"name": "Return outlet details with assigned users",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/assigned-user-list/318",
+			"time": 275,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches assignedUsers": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches assignedUsers": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				275
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches assignedUsers": true
+				}
+			]
+		},
+		{
+			"id": "327ca3aa-0ac5-437a-97ca-029ef9bf7429",
+			"name": "Return outlet details with assigned users 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/assigned-user-list/318",
+			"time": 247,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				247
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "280869dd-2fbd-474e-837b-48721d43365d",
+			"name": "Create a new outlet",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/create",
+			"time": 284,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Body matches status": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches status": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				284
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Body matches status": true
+				}
+			]
+		},
+		{
+			"id": "d6910381-2667-4601-9364-558f1d1f272d",
+			"name": "Create a new outlet 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/create",
+			"time": 235,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "2474a3c6-c4fc-4192-b2af-772e13c8ae20",
+			"name": "Disable an outlet",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/disable/320",
+			"time": 285,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches ACCEPTED": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Body matches ACCEPTED": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				285
+			],
+			"allTests": [
+				{
+					"Body matches ACCEPTED": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "f691fc63-1956-4eb2-88cc-8c79f681f2a3",
+			"name": "Disable an outlet 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/disable/320",
+			"time": 237,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				237
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "da62f092-736b-4dbb-9730-301c7acf6cef",
+			"name": "Get transaction detail",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/get-transaction-detail/28407?merchant-id=10251",
+			"time": 273,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches transactionId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches transactionId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				273
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches transactionId": true
+				}
+			]
+		},
+		{
+			"id": "fdcc2f4f-5e36-4337-8adb-247713f035ca",
+			"name": "Get transaction detail 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/get-transaction-detail/28407?merchant-id=10251",
+			"time": 238,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				238
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "03a72606-b1e8-49af-824b-2063f599a3ee",
+			"name": "Return the outlet details",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/user-detail/318",
+			"time": 271,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches outletName": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Body matches outletName": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				271
+			],
+			"allTests": [
+				{
+					"Body matches outletName": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "7dc7bed6-af40-49f4-969b-20a43cdb5cb4",
+			"name": "Return the outlet details 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/user-detail/318",
+			"time": 231,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				231
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "75ec94bf-0f10-4542-9c0a-e36b476c8c2e",
+			"name": "Retrieves a store attendant's transactions",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/view-transaction-history/318/0/5/ASC?sortField=id&transaction-id=000&transaction-code=000&transaction-type=ACCOUNT_BASE_PAYMENT&payment-mode=ACCOUNT_BASED&transaction-id=28407&start-amount=0&end-amount=999999999&start-date=01-01-2022T00:43:21.225Z&end-date=31-10-2024T00:43:21.225Z",
+			"time": 374,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				374
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b85451ed-0ce1-4e27-98c7-276befe4d301",
+			"name": "Retrieves a store attendant's transactions 401 Copy",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/view-transaction-history/318/0/5/ASC?sortField=id&transaction-id=000&transaction-code=000&transaction-type=ACCOUNT_BASE_PAYMENT&payment-mode=ACCOUNT_BASED&transaction-id=28407&start-amount=0&end-amount=999999999&start-date=01-01-2022T00:43:21.225Z&end-date=31-10-2024T00:43:21.225Z",
+			"time": 288,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				288
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "b6d059af-bfbf-4d26-8845-827111a0f492",
+			"name": "Update an outlet",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/318",
+			"time": 377,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches merchantId": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Body matches merchantId": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				377
+			],
+			"allTests": [
+				{
+					"Body matches merchantId": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "c7762043-9f8d-4656-967a-4ee815b342d3",
+			"name": "Update an outlet 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/merchant/outlet/318",
+			"time": 237,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				237
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "e36ebfcf-75bf-4864-917e-2234c44c264a",
+			"name": "business-categories",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/business-categories",
+			"time": 279,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				279
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "050f1e25-2524-4fc8-a0b1-0187131b68f2",
+			"name": "business-categories 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/business-categories",
+			"time": 239,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				239
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "a802bbec-909f-4aac-9058-494a63188c42",
+			"name": "countries/list",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/countries/list",
+			"time": 374,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				374
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "43c4acea-30f0-4237-ab3b-7060bbdd718d",
+			"name": "countries/list 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/countries/list",
+			"time": 233,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "182b77cc-5da1-44b8-97a8-30bdccbb0397",
+			"name": "countries/regions",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/countries/NG/regions",
+			"time": 265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "71a4a7f0-668d-4075-ac6c-713f082446fe",
+			"name": "countries/regions 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/countries/NG/regions",
+			"time": 235,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "73ea90d1-2c2f-41a8-bf5d-55f60e653f53",
+			"name": "countries/subregions",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/countries/NG/sub-regions",
+			"time": 283,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				283
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "64743165-d520-4c33-bd9c-632cbda7df1a",
+			"name": "countries/subregions 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/countries/NG/sub-regions",
+			"time": 233,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "01bdf9d8-4f6a-4754-9a04-dfec31fffe40",
+			"name": "currency-list",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/currency-list",
+			"time": 256,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				256
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "4071a7d0-d6ca-4cf6-ae11-8edcbf728acc",
+			"name": "currency-list 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/currency-list",
+			"time": 242,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				242
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "b5202904-bafe-45a4-b807-e90202aced1e",
+			"name": "language-list",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/language-list",
+			"time": 269,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				269
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "85cd3a37-ea2a-47f3-ae3a-e7a293729c5e",
+			"name": "language-list 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/platform/language-list",
+			"time": 233,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "acc12015-8373-4271-a6c4-e10f1a00f210",
+			"name": "Change Language",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/profile/change-language?language-id=en",
+			"time": 263,
+			"responseCode": {
+				"code": 202,
+				"name": "Accepted"
+			},
+			"tests": {
+				"Status code is 202": true
+			},
+			"testPassFailCounts": {
+				"Status code is 202": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				263
+			],
+			"allTests": [
+				{
+					"Status code is 202": true
+				}
+			]
+		},
+		{
+			"id": "481edb89-0bc2-40ad-b247-c851dd8e8fa6",
+			"name": "Change Language 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/profile/change-language?language-id=en",
+			"time": 235,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "dd3a79d9-5108-4d77-bf7f-361bb2cd9fc0",
+			"name": "Update user basic information",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/profile/edit",
+			"time": 300,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				300
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "47b2fa60-8cda-4c59-a0f6-3cdeb4beb1df",
+			"name": "Update user basic information 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/profile/edit",
+			"time": 244,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				244
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "a1652c99-2b6c-4c47-b58c-c5daa408fc75",
+			"name": "get-profile-detail",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/profile/get-profile-detail",
+			"time": 741,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				741
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "c3743379-a962-4d51-a1fb-884de671f0f9",
+			"name": "get-profile-detail 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/profile/get-profile-detail",
+			"time": 236,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "7064c9d8-a2b4-4963-bbff-c1de7d679d45",
+			"name": "update-device-status",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/device/update-device-status",
+			"time": 348,
+			"responseCode": {
+				"code": 202,
+				"name": "Accepted"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				348
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "df065c1d-c766-41b1-8762-b7fe439c772a",
+			"name": "update-device-status 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/device/update-device-status",
+			"time": 262,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				262
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "36e4ca0d-8b05-468a-a337-4c5a2cdbd2d5",
+			"name": "device/merchant-list",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/device/merchant-list/10251/0/5/ASC?sortField=id&first-name=Dee&status=OPEN",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches registrationDate": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches registrationDate": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches registrationDate": true
+				}
+			]
+		},
+		{
+			"id": "3cee30e8-893a-41a4-9014-b3eecf84e2af",
+			"name": "device/merchant-list 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/device/merchant-list/10251/0/5/ASC?sortField=id&first-name=Dee&status=OPEN",
+			"time": 237,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				237
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "b4024d00-8214-4a54-8db1-f556e9d58e03",
+			"name": "device/list",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/device/list/0/5/ASC?sortField=id&merchant-id=10251&first-name=Dee&start-date=01-01-2022T00:43:21.225Z&end-date=31-10-2024T00:43:21.225Z",
+			"time": 294,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches registrationDate": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches registrationDate": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				294
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches registrationDate": true
+				}
+			]
+		},
+		{
+			"id": "ab3e3a9e-d805-4b4f-9686-3b733beefe46",
+			"name": "device/list 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/device/list/0/5/ASC?sortField=id&merchant-id=10251&first-name=Dee&start-date=01-01-2022T00:43:21.225Z&end-date=31-10-2024T00:43:21.225Z",
+			"time": 254,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				254
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "9eccc078-1872-41c3-a0d4-e0be11c381eb",
+			"name": "list-permissions",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/list-permissions",
+			"time": 275,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches id": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				275
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches id": true
+				}
+			]
+		},
+		{
+			"id": "2931d993-64c6-41b8-aa1d-d7fae825ace1",
+			"name": "list-permissions 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/list-permissions",
+			"time": 236,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "c05641ac-9188-4a73-9113-2ae166e66943",
+			"name": "list-roles",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/list-roles",
+			"time": 320,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches id": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				320
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches id": true
+				}
+			]
+		},
+		{
+			"id": "ca4ba1d2-1468-4a3b-a266-31fa00e55db5",
+			"name": "list-roles 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/list-roles",
+			"time": 236,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "ace4a682-43c4-465a-8855-1cf05dc93bf2",
+			"name": "Role List",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/list/0/5/ASC?start-date=01-01-2022&end-date=10-08-2024",
+			"time": 252,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches roleName": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches roleName": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				252
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches roleName": true
+				}
+			]
+		},
+		{
+			"id": "1613fb9a-fbeb-405e-a52a-b1ab478a6661",
+			"name": "Role List 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/list/0/5/ASC?start-date=01-01-2022&end-date=10-08-2024",
+			"time": 246,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				246
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "982ef24c-2b56-48b5-a832-709c91bf966d",
+			"name": "role details",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/role-detail?roleName=MERCHANT",
+			"time": 276,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				276
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches name": true
+				}
+			]
+		},
+		{
+			"id": "f3a3cbf0-07e0-40e9-ae33-8bf3f70384d9",
+			"name": "role details 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/role-detail?roleName=MERCHANT",
+			"time": 235,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				235
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "87e93d98-83b4-463d-bcd4-86e3d28f8ebc",
+			"name": "role by id",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/54",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body matches ownerType": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches ownerType": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches ownerType": true
+				}
+			]
+		},
+		{
+			"id": "63446171-5905-4028-a420-9ae191b6802e",
+			"name": "role by id 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/54",
+			"time": 233,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				233
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "105e419d-1711-435b-aacd-4ef4eeba2419",
+			"name": "update role",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/54",
+			"time": 414,
+			"responseCode": {
+				"code": 202,
+				"name": "Accepted"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				414
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "1ca4d221-d28a-4ceb-80ef-00b8a2190624",
+			"name": "update role 401",
+			"url": "https://pr-merchant-gateway.dev.prophius-api.com/api/v1/role/54",
+			"time": 237,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				237
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 30907,
+	"collection": {
+		"requests": [
+			{
+				"id": "a5083953-d192-4e0b-8521-17af093e67a8",
+				"method": "POST"
+			},
+			{
+				"id": "0948fcfe-8098-4a0a-97a7-8b492972de1d",
+				"method": "POST"
+			},
+			{
+				"id": "fca7b939-5096-4357-844f-cd0ec4e632ce",
+				"method": "POST"
+			},
+			{
+				"id": "46a4e447-498a-42aa-bcc2-51404b98463f",
+				"method": "POST"
+			},
+			{
+				"id": "853709a6-b992-4dff-b9c6-69c5116f78e9",
+				"method": "POST"
+			},
+			{
+				"id": "106908ce-7813-4d36-a874-a71ae62b41e1",
+				"method": "GET"
+			},
+			{
+				"id": "b4f4a7a7-d3b9-4bc1-83ce-7ed6f3a1e575",
+				"method": "GET"
+			},
+			{
+				"id": "e6150990-6f5a-409b-80c8-d9828cd09218",
+				"method": "GET"
+			},
+			{
+				"id": "38005e79-000b-4cde-a7f7-816d8faa7bb3",
+				"method": "GET"
+			},
+			{
+				"id": "f15fbde4-0713-4768-a914-aff2cd57b9f6",
+				"method": "GET"
+			},
+			{
+				"id": "6efd6b32-55ed-4217-84e6-855ccf8249bd",
+				"method": "GET"
+			},
+			{
+				"id": "dce1866a-eba9-40e6-b42c-0e72224f6825",
+				"method": "GET"
+			},
+			{
+				"id": "68c1663f-e0d5-499a-b12f-10ba766ac980",
+				"method": "GET"
+			},
+			{
+				"id": "5f27c3b9-5d1a-4933-a6e6-4ee67c735230",
+				"method": "GET"
+			},
+			{
+				"id": "654e330c-106f-4295-9bd3-f5fc355f5a46",
+				"method": "GET"
+			},
+			{
+				"id": "7468899e-b0f4-4758-96d3-57bcbeb750c1",
+				"method": "GET"
+			},
+			{
+				"id": "8046c387-81c2-4b7d-a2f0-3e09fe7baa24",
+				"method": "GET"
+			},
+			{
+				"id": "94d5a98b-762b-4c75-a4f8-a336661d01c3",
+				"method": "GET"
+			},
+			{
+				"id": "523aa8d7-0f49-4d87-bbdf-bac9c3d93b1e",
+				"method": "GET"
+			},
+			{
+				"id": "43a69d0e-78a1-4b44-b1c2-8b41caece77a",
+				"method": "GET"
+			},
+			{
+				"id": "b6ef8fbf-6515-481d-8813-6334c76d6c4d",
+				"method": "GET"
+			},
+			{
+				"id": "6021342d-554c-4fe0-b075-9a83f44a2e38",
+				"method": "GET"
+			},
+			{
+				"id": "e3354921-6362-4c38-9406-b13cd47e7148",
+				"method": "GET"
+			},
+			{
+				"id": "cf1f4447-1b38-4057-8d74-8a086db0454e",
+				"method": "GET"
+			},
+			{
+				"id": "94b78bfa-ca30-4168-bcaa-e865457ffc16",
+				"method": "GET"
+			},
+			{
+				"id": "225cf8b9-3ebf-4353-8bd5-fff7739121df",
+				"method": "GET"
+			},
+			{
+				"id": "83273aa1-6025-41a9-bb2b-ccc2e8bae395",
+				"method": "GET"
+			},
+			{
+				"id": "166ca41d-4e32-41ec-b889-562926defb3a",
+				"method": "GET"
+			},
+			{
+				"id": "cc426ed2-7f13-4717-b910-370c10e469de",
+				"method": "GET"
+			},
+			{
+				"id": "18b46061-a58d-4cb7-8d4b-e07b66fd8c12",
+				"method": "PUT"
+			},
+			{
+				"id": "c1e0ed38-d8b0-4ef1-ba64-43e3957c76a7",
+				"method": "PUT"
+			},
+			{
+				"id": "1635ebff-12ab-406d-99eb-1f340c83ce4c",
+				"method": "POST"
+			},
+			{
+				"id": "e3fd78a4-9543-43bb-8b9e-4d015c563e4a",
+				"method": "POST"
+			},
+			{
+				"id": "588486ed-d91a-47e0-b20a-ef4af15798f2",
+				"method": "POST"
+			},
+			{
+				"id": "9d28bef3-7a12-4fa4-8c43-4c8aa0f1ddd3",
+				"method": "POST"
+			},
+			{
+				"id": "c90dea38-eb7c-4eb4-a197-e3ae9761a0a4",
+				"method": "GET"
+			},
+			{
+				"id": "d0c3bd63-8b1c-4e31-80fa-15696ba3f75a",
+				"method": "GET"
+			},
+			{
+				"id": "0a9adcb7-452b-43e4-b617-20046526d4f2",
+				"method": "GET"
+			},
+			{
+				"id": "3b5ccb13-8c0e-4db2-b36b-ebde9d78f994",
+				"method": "GET"
+			},
+			{
+				"id": "84bb70ae-6615-41d6-9432-0d30529bc025",
+				"method": "GET"
+			},
+			{
+				"id": "31c9c560-a629-400c-bacd-bb9872896f5d",
+				"method": "GET"
+			},
+			{
+				"id": "727cf088-bd33-4c1d-a0db-3203f8f5c5b6",
+				"method": "GET"
+			},
+			{
+				"id": "abe22c6f-5f07-463b-a3d5-56cffd7f8012",
+				"method": "GET"
+			},
+			{
+				"id": "c35cc74a-268f-4e12-803a-1ac149a9b3bd",
+				"method": "GET"
+			},
+			{
+				"id": "7f6b6cb1-371d-4b6c-9866-998e3ddfd978",
+				"method": "GET"
+			},
+			{
+				"id": "9ae10f27-6376-48cc-9078-6bcc620f1931",
+				"method": "GET"
+			},
+			{
+				"id": "47570151-1d30-4f5f-9fe3-4c6e78b5b0bc",
+				"method": "GET"
+			},
+			{
+				"id": "0aa27841-3003-4c9d-999c-03e108bf3204",
+				"method": "PUT"
+			},
+			{
+				"id": "ae9097f5-2449-43e1-ae81-1dbaf7b61a82",
+				"method": "PUT"
+			},
+			{
+				"id": "7b643048-acab-4e78-90b7-fd4cdb698e80",
+				"method": "GET"
+			},
+			{
+				"id": "81f007aa-7172-449b-a74b-9e313dbde45b",
+				"method": "GET"
+			},
+			{
+				"id": "57bbb15c-6498-413c-9880-50f270f4b179",
+				"method": "GET"
+			},
+			{
+				"id": "327ca3aa-0ac5-437a-97ca-029ef9bf7429",
+				"method": "GET"
+			},
+			{
+				"id": "280869dd-2fbd-474e-837b-48721d43365d",
+				"method": "POST"
+			},
+			{
+				"id": "d6910381-2667-4601-9364-558f1d1f272d",
+				"method": "POST"
+			},
+			{
+				"id": "2474a3c6-c4fc-4192-b2af-772e13c8ae20",
+				"method": "POST"
+			},
+			{
+				"id": "f691fc63-1956-4eb2-88cc-8c79f681f2a3",
+				"method": "POST"
+			},
+			{
+				"id": "da62f092-736b-4dbb-9730-301c7acf6cef",
+				"method": "GET"
+			},
+			{
+				"id": "fdcc2f4f-5e36-4337-8adb-247713f035ca",
+				"method": "GET"
+			},
+			{
+				"id": "03a72606-b1e8-49af-824b-2063f599a3ee",
+				"method": "GET"
+			},
+			{
+				"id": "7dc7bed6-af40-49f4-969b-20a43cdb5cb4",
+				"method": "GET"
+			},
+			{
+				"id": "75ec94bf-0f10-4542-9c0a-e36b476c8c2e",
+				"method": "GET"
+			},
+			{
+				"id": "b85451ed-0ce1-4e27-98c7-276befe4d301",
+				"method": "GET"
+			},
+			{
+				"id": "b6d059af-bfbf-4d26-8845-827111a0f492",
+				"method": "PUT"
+			},
+			{
+				"id": "c7762043-9f8d-4656-967a-4ee815b342d3",
+				"method": "PUT"
+			},
+			{
+				"id": "e36ebfcf-75bf-4864-917e-2234c44c264a",
+				"method": "GET"
+			},
+			{
+				"id": "050f1e25-2524-4fc8-a0b1-0187131b68f2",
+				"method": "GET"
+			},
+			{
+				"id": "a802bbec-909f-4aac-9058-494a63188c42",
+				"method": "GET"
+			},
+			{
+				"id": "43c4acea-30f0-4237-ab3b-7060bbdd718d",
+				"method": "GET"
+			},
+			{
+				"id": "182b77cc-5da1-44b8-97a8-30bdccbb0397",
+				"method": "GET"
+			},
+			{
+				"id": "71a4a7f0-668d-4075-ac6c-713f082446fe",
+				"method": "GET"
+			},
+			{
+				"id": "73ea90d1-2c2f-41a8-bf5d-55f60e653f53",
+				"method": "GET"
+			},
+			{
+				"id": "64743165-d520-4c33-bd9c-632cbda7df1a",
+				"method": "GET"
+			},
+			{
+				"id": "01bdf9d8-4f6a-4754-9a04-dfec31fffe40",
+				"method": "GET"
+			},
+			{
+				"id": "4071a7d0-d6ca-4cf6-ae11-8edcbf728acc",
+				"method": "GET"
+			},
+			{
+				"id": "b5202904-bafe-45a4-b807-e90202aced1e",
+				"method": "GET"
+			},
+			{
+				"id": "85cd3a37-ea2a-47f3-ae3a-e7a293729c5e",
+				"method": "GET"
+			},
+			{
+				"id": "acc12015-8373-4271-a6c4-e10f1a00f210",
+				"method": "POST"
+			},
+			{
+				"id": "481edb89-0bc2-40ad-b247-c851dd8e8fa6",
+				"method": "POST"
+			},
+			{
+				"id": "dd3a79d9-5108-4d77-bf7f-361bb2cd9fc0",
+				"method": "POST"
+			},
+			{
+				"id": "47b2fa60-8cda-4c59-a0f6-3cdeb4beb1df",
+				"method": "POST"
+			},
+			{
+				"id": "a1652c99-2b6c-4c47-b58c-c5daa408fc75",
+				"method": "GET"
+			},
+			{
+				"id": "c3743379-a962-4d51-a1fb-884de671f0f9",
+				"method": "GET"
+			},
+			{
+				"id": "7064c9d8-a2b4-4963-bbff-c1de7d679d45",
+				"method": "POST"
+			},
+			{
+				"id": "df065c1d-c766-41b1-8762-b7fe439c772a",
+				"method": "POST"
+			},
+			{
+				"id": "36e4ca0d-8b05-468a-a337-4c5a2cdbd2d5",
+				"method": "GET"
+			},
+			{
+				"id": "3cee30e8-893a-41a4-9014-b3eecf84e2af",
+				"method": "GET"
+			},
+			{
+				"id": "b4024d00-8214-4a54-8db1-f556e9d58e03",
+				"method": "GET"
+			},
+			{
+				"id": "ab3e3a9e-d805-4b4f-9686-3b733beefe46",
+				"method": "GET"
+			},
+			{
+				"id": "9eccc078-1872-41c3-a0d4-e0be11c381eb",
+				"method": "GET"
+			},
+			{
+				"id": "2931d993-64c6-41b8-aa1d-d7fae825ace1",
+				"method": "GET"
+			},
+			{
+				"id": "c05641ac-9188-4a73-9113-2ae166e66943",
+				"method": "GET"
+			},
+			{
+				"id": "ca4ba1d2-1468-4a3b-a266-31fa00e55db5",
+				"method": "GET"
+			},
+			{
+				"id": "ace4a682-43c4-465a-8855-1cf05dc93bf2",
+				"method": "GET"
+			},
+			{
+				"id": "1613fb9a-fbeb-405e-a52a-b1ab478a6661",
+				"method": "GET"
+			},
+			{
+				"id": "982ef24c-2b56-48b5-a832-709c91bf966d",
+				"method": "GET"
+			},
+			{
+				"id": "f3a3cbf0-07e0-40e9-ae33-8bf3f70384d9",
+				"method": "GET"
+			},
+			{
+				"id": "87e93d98-83b4-463d-bcd4-86e3d28f8ebc",
+				"method": "GET"
+			},
+			{
+				"id": "63446171-5905-4028-a420-9ae191b6802e",
+				"method": "GET"
+			},
+			{
+				"id": "105e419d-1711-435b-aacd-4ef4eeba2419",
+				"method": "PUT"
+			},
+			{
+				"id": "1ca4d221-d28a-4ceb-80ef-00b8a2190624",
+				"method": "PUT"
+			}
+		]
+	}
+}
